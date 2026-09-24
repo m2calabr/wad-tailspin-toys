@@ -40,4 +40,13 @@ export default [
       parser: tseslint.parser,
     },
   },
+
+  // Public data-layer APIs must preserve explicit type contracts.
+  {
+    files: ["db/**/*.ts", "src/lib/**/*.ts"],
+    ignores: ["**/*.test.ts"],
+    rules: {
+      "@typescript-eslint/explicit-module-boundary-types": "error",
+    },
+  },
 ];
